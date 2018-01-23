@@ -98,8 +98,8 @@ class StarPatterns
     
     public static void twoStarBoxes(int w,int h)
     {
-        int x = w * 2;//j
-        int y = h * 2;//i
+        int x = w * 2;//i
+        int y = h * 2;//j
         
         for (int i=0; i<x; i++)
         {
@@ -178,6 +178,64 @@ class StarPatterns
         }   
     }
     
+    public static void isoscelesStarTriangle(int h)
+    {
+        int w = h*2 - 1;
+        
+        for (int i=0; i<h; i++)
+        {
+            for (int j=0; j<w; j++)
+            {
+                if ((Math.abs(j) <= i+(w/2)) && (i+j >= h-1)) 
+                {
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }   
+    }
+    
+    public static void checkerBoard(int w, int h)
+    {
+        
+        for (int i=0; i<h; i++)
+        {
+            for (int j=0; j<w; j++)
+            {
+                if ((i + 1) % 2 == (j + 1) % 2) 
+                {
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }   
+    }
+    
+    public static void biggerCheckerBoard(int w, int h)
+    {
+        
+        for (int i=0; i<h; i++)
+        {
+            for (int j=0; j<w; j++)
+            {
+                if ((i+3)%2 >= (j+3)%2)
+                {
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }   
+    }
+    
     public static void main(String[] args) 
     {
         starGrid(5, 5);
@@ -204,7 +262,16 @@ class StarPatterns
         emptyTriangle(6);
         System.out.println();
         
-        starTriangleUR(6);
+        starTriangleUR(10);
+        System.out.println();
+        
+        isoscelesStarTriangle(5);
+        System.out.println();
+        
+        checkerBoard(8,6);
+        System.out.println();
+        
+        biggerCheckerBoard(30, 24);
         System.out.println();
     }
 }
