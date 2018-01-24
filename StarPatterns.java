@@ -224,7 +224,7 @@ class StarPatterns
         {
             for (int j=0; j<w; j++)
             {
-                if ((i+3)%2 >= (j+3)%2)
+                if (((i+3)/3)%2 == ((j+3)/3)%2)
                 {
                     System.out.print("*");
                 }
@@ -234,6 +234,24 @@ class StarPatterns
             }
             System.out.println();
         }   
+    }
+    
+    public static void upsideDownCheckeredTriangle(int w,int h)
+    {
+        for (int i=0; i<h; i++)
+        {
+            for (int j=0; j<w; j++)
+            {
+                if (((i + 1) % 2 == (j + 1) % 2 ) && (j <= i+(w/2) && i+j >= h-1))
+                {
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        } 
     }
     
     public static void main(String[] args) 
@@ -272,6 +290,9 @@ class StarPatterns
         System.out.println();
         
         biggerCheckerBoard(30, 24);
+        System.out.println();
+        
+        upsideDownCheckeredTriangle(12,6);
         System.out.println();
     }
 }
